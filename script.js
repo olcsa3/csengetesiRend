@@ -6,6 +6,8 @@ window.onload = function(){
 
     const orakSzamaDiv = document.createElement("div");
     orakSzamaDiv.setAttribute("id", "orakSzamaDivId");
+    orakSzamaDiv.setAttribute("class", "mx-auto text-center mt-5");
+    orakSzamaDiv.style.width = "50%";
     form.appendChild(orakSzamaDiv);
 
     const oraBekeresLabel = document.createElement("label");
@@ -179,6 +181,17 @@ function nagySzunet(){
 }
 
 function submitGomb(){
+    if (document.getElementById("oraBekeresId").value <= 4 && document.getElementById("igen").checked){
+        document.getElementById("igen").checked = false;
+        alert("Nem lehet nagyszüneted, ha 5-nél kevesebb órád van!");
+        return;
+    }
+    else if (document.getElementById("szunetHosszokId").value < 1 && document.getElementById("igen").checked){
+        document.getElementById("igen").checked = false;
+        alert("Nem lehet nagyszüneted, ha nincsenek szüneteid!");
+        return;
+    }
+
     if(document.getElementById("igen").checked){
         vanENagySzunet[0] = "Igen";
     }

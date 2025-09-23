@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+h2, h4, div {
+    font-family: "Montserrat", sans-serif;
+}
+
+.foOldalDiv {
+    background-color: rgb(236, 226, 226);
+    border-radius: 2rem;
+    
+    opacity: 0;
+    animation: megnyito 1s ease forwards;
+
+    transition: box-shadow 0.3 ease;
+    box-shadow: 0 0.5rem 0.7rem rgba(0,0,0,0.3);
+
+    cursor: default;
+}
+
+@keyframes megnyito {
+    from {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#orakSzamaDivId {
+    opacity: 0;
+    animation: megnyito 1s ease forwards;
+
+    background-color: rgb(204, 196, 196);
+    border-radius: 1rem;
+    padding: 1rem;
+    max-width: fit-content;
+    box-shadow: 0 0.5rem 0.7rem rgba(0,0,0,0.3);
+}
+
+#orakSzamaDivId input[type="radio"] {
+    margin-right: 0.5rem;
+}
